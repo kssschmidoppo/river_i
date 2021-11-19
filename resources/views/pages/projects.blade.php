@@ -1,5 +1,6 @@
 @extends('layouts.start')
 @include('inc.nav')
+
 @section('content')
 
 <div class="col-lg-3">
@@ -11,9 +12,7 @@
         @endforeach
     </div>
 
-</div>
-<!-- /.col-lg-3 -->
-
+</div><!-- col-lg-3 -->
         <!-- Projects-->
         <section class="projects-section bg-light" id="projects">
             <div class="container px-4 px-lg-5">
@@ -59,6 +58,7 @@
                 </div>
             </div>
         </section>
+
         <div class="row">
 
             @foreach ($posts as $post)
@@ -78,7 +78,7 @@
                         <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
                     </div>
                 </div>
-            </div>
+            </div><!--col-lg-4 col-md-6 mb-4-->
             @endforeach
 
         </div><!-- row -->

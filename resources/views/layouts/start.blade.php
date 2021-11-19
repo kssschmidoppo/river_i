@@ -26,7 +26,7 @@
     </head>
 
     <body id="page-top">
-        
+      
         @yield('nav')
         @include('inc.messages')
         
@@ -37,7 +37,7 @@
 
             </div> <!-- row -->
         </div><!-- container -->
-
+     
         @yield('footer')
         @yield('script')
         

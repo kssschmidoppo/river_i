@@ -48,4 +48,4 @@
 
 @endsection
 
-@include('footer')
+@include('inc.footer')

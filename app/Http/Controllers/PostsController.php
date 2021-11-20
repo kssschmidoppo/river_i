@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
-use App\Http\Requests\StorePostsRequest;
-use App\Models\Category as ModelsCategory;
+use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
+
 
 class PostsController extends Controller
 {
@@ -19,7 +18,7 @@ class PostsController extends Controller
     {
         $posts = Post::all();
 
-        return view('posts.index', compact('posts'));
+        return view('posts.index', compact('posts', 'categories'));
     }
 
     /**
@@ -29,7 +28,7 @@ class PostsController extends Controller
      */
     public function create()
     {
-        $categories = ModelsCategory::all();
+        $categories = Category::all();
 
         return view('posts.create', compact('categories'));
     }
@@ -40,11 +39,18 @@ class PostsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorePostsRequest $request)
+    public function store(Request $request)
     {
         $path = $request->file('photo')->store('photos', 'public');
 
+        $request->validate([
+
+            'name'=>'required'
+            
+        ]);
+    
         Post::create([
+
             'name' => $request->name,
             'description' => $request->description,
             'category_id' => $request->category_id,
@@ -74,7 +80,7 @@ class PostsController extends Controller
     public function edit($id)
     {
         $post = Post::findOrFail($id);
-        $categories = ModelsCategory::all();
+        $categories = Category::all();
 
         return view('posts.edit', compact('post', 'categories'));
     }
@@ -90,6 +96,7 @@ class PostsController extends Controller
     {
         $post = Post::findOrFail($id);
         $post->update([
+            
             'name' => $request->name,
             'description' => $request->description,
             'category_id' => $request->category_id,

@@ -14,7 +14,7 @@
                         <a class="nav-link" href="{{ route('about') }}">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('projects') }}">Projects</a>
+                        <a class="nav-link" href="{{ route('project') }}">Projects</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('contact') }}">Contact</a>
@@ -24,6 +24,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">Login</a>
                         </li>
+                        <li>
+                            <a class="nav-link" href="{{ route('register') }}">Register</a>
+                        </li>
                     @endguest
     
                     @auth
@@ -31,11 +34,13 @@
                             <a class="nav-link" href="{{ route('posts.index') }}">Blog</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('categories.index') }}">Categories</a>
+                            <a class="nav-link" href="{{ route('projects.index') }}">Projects</a>
                         </li>
+                        <!-- Name placeholder-->
+                        
                         <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="document.getElementById('logout-form').submit()">Log out</a>
-                        </li>
+                            <a class="nav-link" href="#" onclick="document.getElementById('logout-form').submit()">Log out</a> 
+                        </li> 
                         <form action="{{ route('logout') }}" method="POST" id="logout-form">
                             @csrf
                         </form>

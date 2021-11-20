@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\CategoriesController;
-use App\Http\Controllers\PostsController;
 use App\Models\Category;
 use App\Models\Project;
 use Illuminate\Http\Request;
@@ -20,7 +18,7 @@ class ProjectsController extends Controller
         $categories = Category::all();
         $projects = Project::with('category')->get();
 
-        return view('pages.projects', compact('categories', 'projects'));
+        return view('projects.index', compact('categories', 'projects'));
     }
 
     /**
@@ -41,11 +39,18 @@ class ProjectsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreProjectsRequest $request)
+    public function store(Request $request)
     {
         $path = $request->file('photo')->store('photos', 'public');
+       
+        $request->validate([
+
+            'name'=>'required'
+            
+        ]);
 
         Project::create([
+
             'name' => $request->name,
             'description' => $request->description,
             'category_id' => $request->category_id,
@@ -92,6 +97,7 @@ class ProjectsController extends Controller
     {
         $project = Project::findOrFail($id);
         $project->update([
+
             'name' => $request->name,
             'description' => $request->description,
             'category_id' => $request->category_id,

@@ -7,7 +7,7 @@
 
     <h1 class="my-4">Post</h1>
 
-    <a href="{{ route('projects.create') }}" class="btn btn-info">New Project</a>
+    <a href="{{ route('posts.create') }}" class="btn btn-info">New Project</a>
     <br /><br />
 
     <table class="table">
@@ -16,14 +16,14 @@
                 <th>Name</th>
                 <th></th>
             </tr>
-            @foreach ($projects as $project)
+            @foreach ($posts as $post)
                 <tr>
-                    <td>{{ $project->name }}</td>
-                    <td>${{ $project->price }}</td>
+                    <td>{{ $post->name }}</td>
+                   
                     <td>
-                        <a class="btn btn-primary" href="{{ route('projects.edit', $project->id) }}">Edit</a>
+                        <a class="btn btn-primary" href="{{ route('posts.edit', $post->id) }}">Edit</a>
 
-                        <form action="{{ route('projects.destroy', $project->id) }}" method="POST" style="display: inline">
+                        <form action="{{ route('posts.destroy', $post->id) }}" method="POST" style="display: inline">
                             @method('DELETE')
                             @csrf
                             <input type="submit" value="Delete" class="btn btn-danger" onclick="return confirm('Are you sure?')" />

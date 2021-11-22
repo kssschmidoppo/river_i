@@ -17,7 +17,7 @@ class ProjectsController extends Controller
     {
         $categories = Category::all();
         $projects = Project::with('category')->get();
-
+        
         return view('projects.index', compact('categories', 'projects'));
     }
 

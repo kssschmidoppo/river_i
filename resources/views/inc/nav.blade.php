@@ -30,6 +30,7 @@
                     @endguest
     
                     @auth
+
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('posts.index') }}">Blog</a>
                         </li>
@@ -37,7 +38,7 @@
                             <a class="nav-link" href="{{ route('projects.index') }}">Projects</a>
                         </li>
                         <!-- Name placeholder-->
-                        
+                        <li class="nav-item">{{ Auth::user()->name }}</li>
                         <li class="nav-item">
                             <a class="nav-link" href="#" onclick="document.getElementById('logout-form').submit()">Log out</a> 
                         </li> 

@@ -3,8 +3,8 @@
 
 @section('content')
 
-               <!-- Masthead-->
-               <header class="masthead">
+            <!-- Masthead-->
+            <header class="masthead">
                 <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
                     <div class="d-flex justify-content-center">
                         <div class="text-center">
@@ -17,12 +17,11 @@
             </header>
             <!-- Post Carousel -->
             <div class="col-lg-9">
-    
                 <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
                     <ol class="carousel-indicators">
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"class="active"></li>
                     </ol>
                     <div class="carousel-inner" role="listbox">
                         <div class="carousel-item active">

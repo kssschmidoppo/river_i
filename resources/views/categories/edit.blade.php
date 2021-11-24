@@ -21,7 +21,6 @@
             <br /><br />
         </form>
 
-    </div>
-    <!-- /.col-lg-12 -->
+    </div><!-- col-lg-12 -->
     
 @endsection

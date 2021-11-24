@@ -7,7 +7,7 @@
 
         <h1 class="my-4">Edit Post</h1>
 
-        <form action="{{ route('postts.update', $post->id) }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('posts.update', $post->id) }}" method="POST" enctype="multipart/form-data">
             @method('PUT')
             @csrf
 
@@ -25,7 +25,9 @@
             <br />
             <select name="category_id" class="form-control">
                 @foreach($categories as $category)
-                    <option value="{{ $category->id }}" @if ($category->id == $postt->category_id) selected @endif>{{ $category->name }}</option>
+                    <option value="{{ $category->id }}" 
+                        @if ($category->id == $post->category_id) selected
+                         @endif>{{ $category->name }}</option>
                 @endforeach
             </select>
             <br />

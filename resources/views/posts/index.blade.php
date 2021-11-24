@@ -19,7 +19,7 @@
             @foreach ($posts as $post)
                 <tr>
                     <td>{{ $post->name }}</td>
-                   
+                    <td>{{ $post->description}}</td>
                     <td>
                         <a class="btn btn-primary" href="{{ route('posts.edit', $post->id) }}">Edit</a>
 

@@ -22,7 +22,7 @@
                     <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
                     <div class="card-body">
                         <h4 class="card-title">
-                            <a href="#">{{ $post->name }}</a>
+                            <a href="/POsT Deteils">{{ $post->name }}</a>
                         </h4>
                         
                         <p class="card-text">{{ $post->description }}</p>
@@ -33,6 +33,7 @@
                         <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
                     </div>
                 </div>
+                <!--need to add comment field--->
             </div><!--col-lg-4 col-md-6 mb-4-->
             @endforeach
 

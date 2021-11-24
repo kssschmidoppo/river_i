@@ -5,7 +5,7 @@
 
     <div class="col-lg-12">
 
-        <h1 class="my-4">Edit Product</h1>
+        <h1 class="my-4">Edit Project</h1>
 
         <form action="{{ route('projects.update', $project->id) }}" method="POST" enctype="multipart/form-data">
             @method('PUT')

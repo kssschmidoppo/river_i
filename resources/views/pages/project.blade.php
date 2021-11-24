@@ -6,7 +6,7 @@
 
     <div class="col-lg-3">
 
-        <h1 class="my-4">Projects</h1>
+        <h1 class="my-4">Projects Page</h1>
         <div class="list-group">
             @foreach ($categories as $category)
         
@@ -35,17 +35,17 @@
                     @endforeach
 
                     <!-- Project One Row-->
-                    @foreach ($projects as $project)
+                    @foreach ($posts as $post)
                     <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
                         <div class="col-lg-6"><img class="img-fluid" src="assets/img/demo-image-01.jpg" alt="..." /></div>
                         <div class="col-lg-6">
                             <div class="bg-black text-center h-100 project">
                                 <div class="d-flex h-100">
                                     <div class="project-text w-100 my-auto text-center text-lg-left">
-                                        <h4 class="text-white">{{ $project->name }}</h4>
-                                        <h5>{{ $project->category->name }}</h5>
-                                        <p class="mb-0 text-white-50">{{ $project->description }}</p>
-                                        <a href="{{ $project->link }}"></a>
+                                        <h4 class="text-white">{{ $post->name }}</h4>
+                                        <h5>{{ $post->category->name }}</h5>
+                                        <p class="mb-0 text-white-50">{{ $post->description }}</p>
+                                        <a href="{{ $post->link }}"></a>
                                         <hr class="d-none d-lg-block mb-0 ms-0" />
                                     </div>
                                 </div>

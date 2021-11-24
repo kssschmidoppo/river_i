@@ -18,22 +18,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-     return view('index');
- })->name('home');
-
-
-
-Route::get('/about', function () {
-    return view('pages.about');
-})->name('about');
-
-Route::get('/project', 'PagesController@projectIndex')->name('project');
-
-Route::get('/contact', function () {
-    return view('pages.contact');
-})->name('contact');
-
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -41,7 +25,19 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
+Route::get('/project', 'PagesController@projectIndex')->name('project');
 
+Route::get('/', function () {
+     return view('index');
+ })->name('index');
+
+Route::get('/about', function () {
+    return view('pages.about');
+})->name('about');
+
+Route::get('/contact', function () {
+    return view('pages.contact');
+})->name('contact');
 
 Auth::routes();
 
@@ -52,3 +48,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
     Route::resource('posts', PostsController::class);
     Route::resource('projects', ProjectsController::class);
 // });
+
+//Route::group(['middleware' => ['auth', 'save_last_action_timestamp']], function () {});

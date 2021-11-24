@@ -5,7 +5,7 @@
 
     <div class="col-lg-12">
 
-        <h1 class="my-4">Categories</h1>
+        <h1 class="my-4 mt-4">Categories</h1>
 
         <a href="{{ route('categories.create') }}" class="btn btn-info">New Category</a>
         <br /><br />

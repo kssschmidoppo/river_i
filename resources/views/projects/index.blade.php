@@ -5,7 +5,7 @@
 
     <div class="col-lg-12">
 
-        <h1 class="my-4">Project</h1>
+        <h1 class="my-4">Projects</h1>
 
         <a href="{{ route('projects.create') }}" class="btn btn-info">New Project</a>
         <br /><br />
@@ -19,7 +19,7 @@
                 @foreach ($projects as $project)
                     <tr>
                         <td>{{ $project->name }}</td>
-                
+                        <td>{{ $post->description}}</td>
                         <td>
                             <a class="btn btn-primary" href="{{ route('projects.edit', $project->id) }}">Edit</a>
 

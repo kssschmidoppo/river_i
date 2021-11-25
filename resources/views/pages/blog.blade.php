@@ -22,12 +22,12 @@
                     <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
                     <div class="card-body">
                         <h4 class="card-title">
-                            <a href="/POsT Deteils">{{ $post->name }}</a>
+                            <a href="/POsT Deteils">{{ $project->name }}</a>
                         </h4>
                         
-                        <p class="card-text">{{ $post->description }}</p>
+                        <p class="card-text">{{ $project->description }}</p>
                         <hr />
-                        Category: {{ $post->category->name }}
+                        Category: {{ $projectt->category->name }}
                     </div>
                     <div class="card-footer">
                         <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>

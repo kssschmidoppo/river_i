@@ -1,7 +1,7 @@
 @extends('layouts.start')
 
 @section('content')
-    <form action="{{route('admin.pages-editor.info.update', [$project, $post, $info]) }}" 
+    <form action="{{route('info.update', [$project, $info]) }}" 
     method="POST">
     @csrf
     @method('PUT')

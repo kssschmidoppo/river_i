@@ -3,11 +3,14 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Models\Info;
+
 
 class ImageController extends Controller
 {
-    $info = new Info();
+    public function store()
+    {
+        $info = new Info();
         $info->id = 0;
         $info->exists = true;
         $image = $info->addMediaFromRequest('upload')->toMediaCollection('images');
@@ -15,4 +18,6 @@ class ImageController extends Controller
         return response()->json([
             'url' => $image->getUrl('thumb')
         ]);
+    }
+        
 }

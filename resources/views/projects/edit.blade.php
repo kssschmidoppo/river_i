@@ -18,7 +18,7 @@
 
             Description:
             <br />
-            <textarea name="description" class="form-control">{{ $project->description }}</textarea>
+            <textarea name="description" class="form-control editor">{{ $project->description }}</textarea>
             <br />
 
             Category:
@@ -49,4 +49,8 @@
     </div>
     <!-- /.col-lg-12 -->
 
+@endsection
+
+@section('scrtip')
+  @include('info.ckeditor')  
 @endsection

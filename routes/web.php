@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-// use App\Http\Controllers\PostsController;
 // use App\Http\Controllers\ProjectsController;
 // // use App\Http\Controllers\CategoriesController;
 
@@ -39,13 +38,16 @@ Route::get('/contact', function () {
     return view('pages.contact');
 })->name('contact');
 
+Route::get('/ckeditor', function () {
+    return view('projects.info.ckeditor');
+})->name('editor');
+
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::post('/images', [\App\Http\Controllers\Admin\ImageController::class, 'store'])->name('admin.image.store');
 // Route::group(['middleware' => 'auth'], function() {
     Route::resource('categories', CategoriesController::class);
-    Route::resource('posts', PostsController::class);
     Route::resource('projects', ProjectsController::class);
 // });
 

@@ -19,7 +19,7 @@
                 @foreach ($projects as $project)
                     <tr>
                         <td>{{ $project->name }}</td>
-                        <td>{{ $post->description}}</td>
+                        <td>{{ $project->description}}</td>
                         <td>
                             <a class="btn btn-primary" href="{{ route('projects.edit', $project->id) }}">Edit</a>
 
